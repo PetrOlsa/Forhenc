@@ -4,11 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Forhenc - Folkrock Band</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Oswald:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-      /* Reset & Base Styles */
       * {
         box-sizing: border-box;
         margin: 0;
@@ -20,7 +22,7 @@
       }
 
       body {
-        font-family: 'Inter', sans-serif;
+        font-family: "Inter", sans-serif;
         background-color: #ffffff;
         color: #000000;
         line-height: 1.6;
@@ -38,6 +40,11 @@
         transition: all 0.3s ease;
       }
 
+      a:focus-visible {
+        outline: 2px solid #000;
+        outline-offset: 4px;
+      }
+
       ul {
         list-style: none;
       }
@@ -48,9 +55,13 @@
         display: block;
       }
 
-      /* Typography */
-      h1, h2, h3, h4, h5, h6 {
-        font-family: 'Oswald', sans-serif;
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Oswald", sans-serif;
         text-transform: uppercase;
         font-weight: 700;
         line-height: 1.2;
@@ -62,7 +73,6 @@
         letter-spacing: 0.05em;
       }
 
-      /* Layout Utilities */
       .container {
         max-width: 1024px;
         margin: 0 auto;
@@ -73,7 +83,22 @@
         margin-bottom: 8rem;
       }
 
-      /* Header */
+      .section[id] {
+        scroll-margin-top: 8rem;
+      }
+
+      .section-narrow {
+        max-width: 42rem;
+      }
+
+      .section-medium {
+        max-width: 48rem;
+      }
+
+      .section-wide {
+        max-width: 56rem;
+      }
+
       header {
         position: fixed;
         top: 0;
@@ -97,6 +122,11 @@
         display: flex;
         align-items: center;
         gap: 0.75rem;
+      }
+
+      .logo-container:focus-visible {
+        outline: 2px solid #000;
+        outline-offset: 4px;
       }
 
       .logo-img-small {
@@ -127,7 +157,6 @@
         text-underline-offset: 4px;
       }
 
-      /* Hero Section */
       .hero {
         min-height: 70vh;
         display: flex;
@@ -159,7 +188,6 @@
         color: #666;
       }
 
-      /* Section Headers */
       .section-title {
         font-size: 2.5rem;
         margin-bottom: 3rem;
@@ -168,14 +196,16 @@
         padding-bottom: 0.5rem;
       }
 
-      /* About Section */
       .about-text {
         font-size: 1.125rem;
         font-weight: 300;
         text-align: justify;
       }
 
-      /* Members Grid */
+      .about-text p + p {
+        margin-top: 1.5rem;
+      }
+
       .members-grid {
         display: grid;
         grid-template-columns: 1fr;
@@ -218,7 +248,7 @@
 
       .member-name {
         display: block;
-        font-family: 'Oswald', sans-serif;
+        font-family: "Oswald", sans-serif;
         font-size: 1.5rem;
         font-weight: 700;
         text-transform: uppercase;
@@ -230,7 +260,6 @@
         color: #666;
       }
 
-      /* Concerts List */
       .concerts-list {
         display: flex;
         flex-direction: column;
@@ -249,7 +278,7 @@
 
       .concert-date {
         display: block;
-        font-family: 'Oswald', sans-serif;
+        font-family: "Oswald", sans-serif;
         font-size: 1.25rem;
         font-weight: 700;
         margin-bottom: 0.5rem;
@@ -272,7 +301,6 @@
         color: #666;
       }
 
-      /* Contact Section */
       .contact-box {
         border: 1px solid #000;
         padding: 3rem 1.5rem;
@@ -289,6 +317,15 @@
         color: #fff;
       }
 
+      .contact-box:focus-within {
+        background-color: #000;
+        color: #fff;
+      }
+
+      .contact-box:focus-within a {
+        color: #fff;
+      }
+
       .contact-label {
         font-size: 1.25rem;
         font-weight: 300;
@@ -302,7 +339,6 @@
         text-underline-offset: 8px;
       }
 
-      /* Footer */
       footer {
         text-align: center;
         padding: 2rem 0;
@@ -313,7 +349,6 @@
         color: #666;
       }
 
-      /* Responsive */
       @media (min-width: 640px) {
         .header-inner {
           flex-direction: row;
@@ -355,7 +390,7 @@
         .members-grid {
           grid-template-columns: repeat(3, 1fr);
         }
-        
+
         .hero-title {
           font-size: 8rem;
         }
@@ -365,10 +400,10 @@
   <body>
     <header>
       <div class="container header-inner">
-        <div class="logo-container">
-          <img src="public/logo.svg" alt="Forhenc Logo" class="logo-img-small">
+        <a href="#" class="logo-container" aria-label="Forhenc - zpět na začátek stránky">
+          <img src="public/logo.svg" alt="Forhenc Logo" class="logo-img-small" />
           <h1 class="site-title">FORHENC</h1>
-        </div>
+        </a>
         <nav>
           <ul>
             <li><a href="#o-nas">O nás</a></li>
@@ -382,60 +417,82 @@
 
     <main>
       <section class="hero">
-        <img src="public/logo.svg" alt="Forhenc Logo" class="hero-logo">
+        <img src="public/logo.svg" alt="Forhenc Logo" class="hero-logo" />
         <h2 class="hero-title">FORHENC</h2>
         <p class="hero-subtitle">Folkrock Zbraslav</p>
       </section>
 
-      <section id="o-nas" class="section container" style="max-width: 42rem;">
+      <section id="o-nas" class="section container section-narrow">
         <h3 class="section-title">O nás</h3>
-        <p class="about-text">
-          Vše začalo v roce 2004 ve zbraslavské hospodě, kde se zakládající duo Lucka a Štěpán střídalo o jedinou kytaru. 
-          Z nesmělých začátků se brzy stala autorská jízda. Po křtu ohněm na ZbraslaFestu 2005 se kapela začala rozrůstat o další nástroje. 
-          Z hospodského dua se Forhenc vypracovali v plnohodnotnou partu, která našla domovskou zkušebnu ve zbraslavské garáži a za sebou má i živé album 'Forhenc Naživo'.
-        </p>
+        <div class="about-text">
+          <p>
+            V raných začátcích se další první koncerty odehrály ve složení Štěpán kytara,
+            Lucka zpěv, Péťa basová kytara a Karel Čeleda na housle. Později byl přibrán i
+            bubeník Kuba Nič a saxofonistka Johanka Hovorková. Forhenc odehráli řadu koncertů
+            v pražských klubech jako Jet club, Dead Jack, Na Slamníku, Na Klamovce nebo na
+            Zbraslavi, a také na malých hudebních festivalech JéňaFfest, Rock pro Zbraslav,
+            Póčofest, pivní slavnosti Zbraslav nebo Voznice Fest.
+          </p>
+          <p>
+            Velkým úspěchem byla také soutěž amatérských kapel, která se uskutečnila v klubu
+            Fatal na Žižkově, kde Forhenc postoupili do finále.
+          </p>
+          <p>
+            Při dalším směřování kapela, jak už to bývá, obměnila členy a z časových důvodů
+            se rozloučila s bubeníkem Kubou a ságařkou Johankou. Náhrada se ale našla a za
+            bicí zasedl Zdenda Bíba a saxofonové party převzala skvělá Víťa Ryčlová. Díky
+            přátelství s dalšími kapelami se k občasnému spolu-hraní přidal také klávesák
+            Ondra Čepelák, díky němuž si Forhenc už dvakrát zahráli v pražské Malostranské
+            besedě, ještě jednou "Ondro, díky moc".
+          </p>
+          <p>
+            Forhenc pořád zůstávají partou amatérských muzikantů, ale hlavně přátel, které
+            baví nejen společné hraní a tvorba, ale také jen tak spolu pobýt.
+          </p>
+          <p>Co dodat? Prostě přijďte na koncert, Folk rock and Forhenc is not dead.</p>
+        </div>
       </section>
 
-      <section id="clenove" class="section container" style="max-width: 56rem;">
+      <section id="clenove" class="section container section-wide">
         <h3 class="section-title">Členové</h3>
         <div class="members-grid">
           <div class="member-item">
-            <img src="public/lucka.jpeg" alt="Lucka" class="member-photo">
+            <img src="public/lucka.jpeg" alt="Lucka" class="member-photo" />
             <div class="member-info">
               <span class="member-name">Lucka</span>
               <span class="member-role font-mono">Zpěv</span>
             </div>
           </div>
           <div class="member-item">
-            <img src="public/stepan.jpeg" alt="Štěpán" class="member-photo">
+            <img src="public/stepan.jpeg" alt="Štěpán" class="member-photo" />
             <div class="member-info">
               <span class="member-name">Štěpán</span>
               <span class="member-role font-mono">Zpěv + Kytara</span>
             </div>
           </div>
           <div class="member-item">
-            <img src="public/petr.jpeg" alt="Petr" class="member-photo">
+            <img src="public/petr.jpeg" alt="Petr" class="member-photo" />
             <div class="member-info">
               <span class="member-name">Petr</span>
               <span class="member-role font-mono">Basová kytara</span>
             </div>
           </div>
           <div class="member-item">
-            <img src="public/vita.jpeg" alt="Víťa" class="member-photo">
+            <img src="public/vita.jpeg" alt="Víťa" class="member-photo" />
             <div class="member-info">
               <span class="member-name">Víťa</span>
               <span class="member-role font-mono">Saxofon</span>
             </div>
           </div>
           <div class="member-item">
-            <img src="public/ondra.jpeg" alt="Ondra" class="member-photo">
+            <img src="public/ondra.jpeg" alt="Ondra" class="member-photo" />
             <div class="member-info">
               <span class="member-name">Ondra</span>
               <span class="member-role font-mono">Klávesy</span>
             </div>
           </div>
           <div class="member-item">
-            <img src="public/zdenek.jpeg" alt="Zdeněk" class="member-photo">
+            <img src="public/zdenek.jpeg" alt="Zdeněk" class="member-photo" />
             <div class="member-info">
               <span class="member-name">Zdeněk</span>
               <span class="member-role font-mono">Bicí</span>
@@ -444,7 +501,7 @@
         </div>
       </section>
 
-      <section id="koncerty" class="section container" style="max-width: 48rem;">
+      <section id="koncerty" class="section container section-medium">
         <h3 class="section-title">Koncerty</h3>
         <div class="concerts-list">
           <div class="concert-item">
@@ -471,7 +528,7 @@
         </div>
       </section>
 
-      <section id="kontakt" class="section container" style="max-width: 42rem;">
+      <section id="kontakt" class="section container section-narrow">
         <h3 class="section-title">Kontakt</h3>
         <div class="contact-box">
           <p class="contact-label">Máte zájem o koncert?</p>
@@ -487,4 +544,3 @@
     </footer>
   </body>
 </html>
-
