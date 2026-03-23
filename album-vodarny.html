@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forhenc - Fotoalbum U Vodárny</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Oswald:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: #ffffff;
+        color: #000000;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      a:focus-visible {
+        outline: 2px solid #000;
+        outline-offset: 4px;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Oswald", sans-serif;
+        text-transform: uppercase;
+        line-height: 1.1;
+      }
+
+      .container {
+        width: min(1120px, calc(100% - 3rem));
+        margin: 0 auto;
+      }
+
+      .page-header {
+        padding: 2rem 0 1rem;
+      }
+
+      .back-link {
+        display: inline-block;
+        margin-bottom: 1.5rem;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .back-link:hover {
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+
+      .album-hero {
+        margin-bottom: 3rem;
+      }
+
+      .album-hero-cover {
+        width: 100%;
+        max-height: 32rem;
+        object-fit: cover;
+        margin-bottom: 1.5rem;
+      }
+
+      .album-title {
+        font-size: clamp(2.5rem, 6vw, 5rem);
+        margin-bottom: 0.75rem;
+      }
+
+      .album-description {
+        max-width: 42rem;
+        font-size: 1.1rem;
+        color: #444;
+      }
+
+      .photo-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding-bottom: 4rem;
+      }
+
+      .photo-card {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        background: #fff;
+      }
+
+      .photo-image {
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+      }
+
+      .photo-caption {
+        padding: 0.9rem 1rem 1rem;
+        font-size: 0.95rem;
+        color: #555;
+      }
+
+      @media (min-width: 640px) {
+        .photo-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (min-width: 960px) {
+        .photo-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="page-header">
+        <a href="index.html#galerie" class="back-link">Zpět na hlavní stránku</a>
+        <section class="album-hero">
+          <img
+            src="Galery/U Vodárny_24.1.2025/IMG_2827_cover.JPG"
+            alt="Forhenc - album U Vodárny"
+            class="album-hero-cover"
+          />
+          <h1 class="album-title">U Vodárny</h1>
+          <p class="album-description">
+            Fotogalerie z koncertu U Vodárny dne 24. 1. 2025.
+          </p>
+        </section>
+      </header>
+
+      <main>
+        <section class="photo-grid" aria-label="Fotografie alba U Vodárny">
+          <figure class="photo-card">
+            <img
+              src="Galery/U Vodárny_24.1.2025/IMG_2827_cover.JPG"
+              alt="U Vodárny 24. 1. 2025 - foto 1"
+              class="photo-image"
+            />
+            <figcaption class="photo-caption">U Vodárny 24. 1. 2025</figcaption>
+          </figure>
+          <figure class="photo-card">
+            <img
+              src="Galery/U Vodárny_24.1.2025/IMG_2829.JPG"
+              alt="U Vodárny 24. 1. 2025 - foto 2"
+              class="photo-image"
+            />
+            <figcaption class="photo-caption">U Vodárny 24. 1. 2025</figcaption>
+          </figure>
+          <figure class="photo-card">
+            <img
+              src="Galery/U Vodárny_24.1.2025/IMG_2830.JPG"
+              alt="U Vodárny 24. 1. 2025 - foto 3"
+              class="photo-image"
+            />
+            <figcaption class="photo-caption">U Vodárny 24. 1. 2025</figcaption>
+          </figure>
+          <figure class="photo-card">
+            <img
+              src="Galery/U Vodárny_24.1.2025/IMG_2831.JPG"
+              alt="U Vodárny 24. 1. 2025 - foto 4"
+              class="photo-image"
+            />
+            <figcaption class="photo-caption">U Vodárny 24. 1. 2025</figcaption>
+          </figure>
+          <figure class="photo-card">
+            <img
+              src="Galery/U Vodárny_24.1.2025/IMG_2832.JPG"
+              alt="U Vodárny 24. 1. 2025 - foto 5"
+              class="photo-image"
+            />
+            <figcaption class="photo-caption">U Vodárny 24. 1. 2025</figcaption>
+          </figure>
+          <figure class="photo-card">
+            <img
+              src="Galery/U Vodárny_24.1.2025/IMG_2833.JPG"
+              alt="U Vodárny 24. 1. 2025 - foto 6"
+              class="photo-image"
+            />
+            <figcaption class="photo-caption">U Vodárny 24. 1. 2025</figcaption>
+          </figure>
+          <figure class="photo-card">
+            <img
+              src="Galery/U Vodárny_24.1.2025/IMG_2834.JPG"
+              alt="U Vodárny 24. 1. 2025 - foto 7"
+              class="photo-image"
+            />
+            <figcaption class="photo-caption">U Vodárny 24. 1. 2025</figcaption>
+          </figure>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

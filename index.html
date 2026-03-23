@@ -212,6 +212,51 @@
         gap: 2rem;
       }
 
+      .albums-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .album-card {
+        display: block;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        overflow: hidden;
+        background: #fff;
+      }
+
+      .album-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+      }
+
+      .album-cover {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+      }
+
+      .album-cover-top {
+        object-position: center top;
+      }
+
+      .album-card-body {
+        padding: 1.5rem;
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
+      }
+
+      .album-title {
+        font-size: 1.75rem;
+        margin-bottom: 0.35rem;
+      }
+
+      .album-meta {
+        font-size: 0.875rem;
+        color: #666;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
       .member-item {
         border-left: 1px solid #000;
         padding-left: 1.5rem;
@@ -368,6 +413,10 @@
           grid-template-columns: repeat(2, 1fr);
         }
 
+        .albums-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
         .concert-item {
           display: flex;
           align-items: baseline;
@@ -408,6 +457,7 @@
           <ul>
             <li><a href="#o-nas">O nás</a></li>
             <li><a href="#clenove">Členové</a></li>
+            <li><a href="#galerie">Galerie</a></li>
             <li><a href="#koncerty">Koncerty</a></li>
             <li><a href="#kontakt">Kontakt</a></li>
           </ul>
@@ -498,6 +548,56 @@
               <span class="member-role font-mono">Bicí</span>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section id="galerie" class="section container section-wide">
+        <h3 class="section-title">Galerie</h3>
+        <div class="albums-grid">
+          <a href="album-kapela.html" class="album-card" aria-label="Otevřít fotoalbum Kapela">
+            <img src="public/lucka.jpeg" alt="Cover alba Kapela" class="album-cover" />
+            <div class="album-card-body">
+              <h4 class="album-title">Kapela</h4>
+              <p class="album-meta">6 fotografií</p>
+            </div>
+          </a>
+          <a href="album-vodarny.html" class="album-card" aria-label="Otevřít fotoalbum U Vodárny">
+            <img
+              src="Galery/U Vodárny_24.1.2025/IMG_2827_cover.JPG"
+              alt="Cover alba U Vodárny"
+              class="album-cover"
+            />
+            <div class="album-card-body">
+              <h4 class="album-title">U Vodárny</h4>
+              <p class="album-meta">24. 1. 2025 • 7 fotografií</p>
+            </div>
+          </a>
+          <a href="album-brouk.html" class="album-card" aria-label="Otevřít fotoalbum Hospoda Brouk">
+            <img
+              src="Galery/Hospoda Brouk_23.2.2024/IMG_8673_cover.jpeg"
+              alt="Cover alba Hospoda Brouk"
+              class="album-cover album-cover-top"
+            />
+            <div class="album-card-body">
+              <h4 class="album-title">Hospoda Brouk</h4>
+              <p class="album-meta">23. 2. 2024 • 7 fotografií</p>
+            </div>
+          </a>
+          <a
+            href="album-pivni-slavnosti.html"
+            class="album-card"
+            aria-label="Otevřít fotoalbum Pivní slavnosti Zbraslav"
+          >
+            <img
+              src="Galery/Pivní slavnosti Zbraslav_25.9.2021/IMG_2376.JPG"
+              alt="Cover alba Pivní slavnosti Zbraslav"
+              class="album-cover"
+            />
+            <div class="album-card-body">
+              <h4 class="album-title">Pivní slavnosti Zbraslav</h4>
+              <p class="album-meta">25. 9. 2021 • 11 fotografií</p>
+            </div>
+          </a>
         </div>
       </section>
 
