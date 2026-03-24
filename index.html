@@ -141,6 +141,8 @@
 
       nav ul {
         display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 1.5rem;
       }
 
@@ -150,6 +152,14 @@
         letter-spacing: 0.1em;
         font-weight: 500;
         position: relative;
+      }
+
+      nav {
+        width: 100%;
+      }
+
+      nav li {
+        flex: 0 0 auto;
       }
 
       nav a:hover {
@@ -432,6 +442,10 @@
           flex-direction: row;
           justify-content: space-between;
           align-items: baseline;
+        }
+
+        nav {
+          width: auto;
         }
       }
 
