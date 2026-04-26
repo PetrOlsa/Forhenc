@@ -321,6 +321,14 @@
         gap: 2rem;
       }
 
+      .concert-group-title {
+        font-size: 0.875rem;
+        margin-bottom: 1.25rem;
+        color: #666;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
+
       .concert-item {
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         padding-bottom: 1rem;
@@ -354,6 +362,26 @@
       .concert-time {
         font-size: 0.875rem;
         color: #666;
+      }
+
+      .past-concerts-panel {
+        margin-top: 3rem;
+        padding: 2rem 1.5rem;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        background: #f7f7f7;
+      }
+
+      .past-concerts-panel .concert-item {
+        border-color: rgba(0, 0, 0, 0.08);
+      }
+
+      .past-concerts-panel .concert-item:hover {
+        border-color: rgba(0, 0, 0, 0.08);
+      }
+
+      .past-concerts-panel .concert-date,
+      .past-concerts-panel .concert-location {
+        color: #555;
       }
 
       .contact-box {
@@ -617,26 +645,32 @@
 
       <section id="koncerty" class="section container section-medium">
         <h3 class="section-title">Koncerty</h3>
+        <p class="concert-group-title">Nadcházející</p>
         <div class="concerts-list">
-          <div class="concert-item">
-            <span class="concert-date">19.4. 2026</span>
-            <div class="concert-details">
-              <span class="concert-location">Na Slamníku</span>
-              <span class="concert-time font-mono">18:00</span>
-            </div>
-          </div>
-          <div class="concert-item">
-            <span class="concert-date">25.4. 2026</span>
-            <div class="concert-details">
-              <span class="concert-location">Zbraslav, Park Ovál, Gril Piknik</span>
-              <span class="concert-time font-mono">20:00</span>
-            </div>
-          </div>
           <div class="concert-item">
             <span class="concert-date">9.5. 2026</span>
             <div class="concert-details">
               <span class="concert-location">Zbraslav, Narozeniny L+P</span>
               <span class="concert-time font-mono">19:00</span>
+            </div>
+          </div>
+        </div>
+        <div class="past-concerts-panel">
+          <p class="concert-group-title">Proběhlé koncerty</p>
+          <div class="concerts-list">
+            <div class="concert-item">
+              <span class="concert-date">25.4. 2026</span>
+              <div class="concert-details">
+                <span class="concert-location">Zbraslav, Park Ovál, Gril Piknik</span>
+                <span class="concert-time font-mono">20:00</span>
+              </div>
+            </div>
+            <div class="concert-item">
+              <span class="concert-date">19.4. 2026</span>
+              <div class="concert-details">
+                <span class="concert-location">Na Slamníku</span>
+                <span class="concert-time font-mono">18:00</span>
+              </div>
             </div>
           </div>
         </div>
