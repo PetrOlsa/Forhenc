@@ -49,6 +49,10 @@
         list-style: none;
       }
 
+      [hidden] {
+        display: none !important;
+      }
+
       img {
         max-width: 100%;
         height: auto;
@@ -364,6 +368,11 @@
         color: #666;
       }
 
+      .concerts-empty {
+        font-weight: 300;
+        color: #666;
+      }
+
       .past-concerts-panel {
         margin-top: 3rem;
         padding: 2rem 1.5rem;
@@ -645,9 +654,14 @@
 
       <section id="koncerty" class="section container section-medium">
         <h3 class="section-title">Koncerty</h3>
+        <!--
+          Nový koncert stačí přidat kamkoli do jednoho ze seznamů s atributem
+          data-date="RRRR-MM-DD". Skript níže koncerty sám seřadí a po skončení
+          dne konání je přesune do Proběhlých.
+        -->
         <p class="concert-group-title">Nadcházející</p>
-        <div class="concerts-list">
-          <div class="concert-item">
+        <div class="concerts-list" id="upcoming-concerts">
+          <div class="concert-item" data-date="2026-05-09">
             <span class="concert-date">9.5. 2026</span>
             <div class="concert-details">
               <span class="concert-location">Zbraslav, Narozeniny L+P</span>
@@ -655,17 +669,20 @@
             </div>
           </div>
         </div>
-        <div class="past-concerts-panel">
+        <p class="concerts-empty" id="no-upcoming-concerts" hidden>
+          Momentálně nemáme naplánovaný žádný koncert. Sledujte nás, brzy zase zahrajeme!
+        </p>
+        <div class="past-concerts-panel" id="past-concerts-panel">
           <p class="concert-group-title">Proběhlé koncerty</p>
-          <div class="concerts-list">
-            <div class="concert-item">
+          <div class="concerts-list" id="past-concerts">
+            <div class="concert-item" data-date="2026-04-25">
               <span class="concert-date">25.4. 2026</span>
               <div class="concert-details">
                 <span class="concert-location">Zbraslav, Park Ovál, Gril Piknik</span>
                 <span class="concert-time font-mono">20:00</span>
               </div>
             </div>
-            <div class="concert-item">
+            <div class="concert-item" data-date="2026-04-19">
               <span class="concert-date">19.4. 2026</span>
               <div class="concert-details">
                 <span class="concert-location">Na Slamníku</span>
@@ -690,5 +707,40 @@
         &copy; <script>document.write(new Date().getFullYear())</script> Forhenc Zbraslav
       </div>
     </footer>
+    <script>
+      // Rozdělí koncerty na nadcházející a proběhlé podle dnešního data.
+      // Koncert zůstává mezi nadcházejícími až do konce dne, kdy se hraje.
+      (function () {
+        var upcomingList = document.getElementById("upcoming-concerts");
+        var pastList = document.getElementById("past-concerts");
+        var pastPanel = document.getElementById("past-concerts-panel");
+        var emptyNote = document.getElementById("no-upcoming-concerts");
+
+        var now = new Date();
+        var today =
+          now.getFullYear() +
+          "-" +
+          String(now.getMonth() + 1).padStart(2, "0") +
+          "-" +
+          String(now.getDate()).padStart(2, "0");
+
+        var concerts = Array.prototype.slice.call(
+          document.querySelectorAll("#koncerty .concert-item[data-date]")
+        );
+        var upcoming = concerts.filter(function (c) { return c.dataset.date >= today; });
+        var past = concerts.filter(function (c) { return c.dataset.date < today; });
+
+        // Nadcházející od nejbližšího, proběhlé od nejnovějšího.
+        upcoming.sort(function (a, b) { return a.dataset.date.localeCompare(b.dataset.date); });
+        past.sort(function (a, b) { return b.dataset.date.localeCompare(a.dataset.date); });
+
+        upcoming.forEach(function (c) { upcomingList.appendChild(c); });
+        past.forEach(function (c) { pastList.appendChild(c); });
+
+        upcomingList.hidden = upcoming.length === 0;
+        emptyNote.hidden = upcoming.length > 0;
+        pastPanel.hidden = past.length === 0;
+      })();
+    </script>
   </body>
 </html>
